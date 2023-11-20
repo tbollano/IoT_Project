@@ -38,12 +38,12 @@ def sup_user(name):
 @app.route('/canonical/<float:attitude>')
 def get_attitude(attitude):
 
-    if attitude <0:
-        return 'Heading for the ground, your attitude is %f' %attitude
-    elif attitude >0:
-        return 'You are not flying a rocked, your attitude is %f!!' %attitude
+    if attitude <-60:
+        return 'Pull up, your attitude is %f' %attitude
+    elif attitude >60:
+        return 'Stall warning, your attitude is %f!!' %attitude
     else:
-        return 'Smooth sailing at %f attitude' %attitude
+        return '%f attitude' %attitude
 ##this is taken into account here but /canonical/ allows for both / canonical
 # and /canonical/ in the URL
 if __name__ == '__main__':
